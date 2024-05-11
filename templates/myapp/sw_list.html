@@ -1,0 +1,60 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+    {% csrf_token %}
+    <div class="d-flex align-items-start bg-body-tertiary mb-3">
+        <div class="col m-1">
+            <a class="btn btn-primary  " href="{% url 'add_new_member' %}">Add New Emp</a>
+        </div>
+        <div class="col col-2 m-1">
+            <input class="form-control" id="formFileSm" type="file">
+        </div>
+    </div>
+    <div class="m-2" id="empTableList">
+        <table class="table table table-bordered border-primary">
+            <thead>
+            <tr class="table-dark">
+                <th>Dept</th>
+                <th>Function</th>
+                <th>Position</th>
+                <th>userID</th>
+                <th>VietnameseName</th>
+                <th>ChineseName</th>
+                <th>EnglishName</th>
+                <th>Level</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>University</th>
+                <th>Major</th>
+                <th>Experience</th>
+                <th>LastCompany</th>
+                <th>Mail</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for emp in empList %}
+                <tr class="table-info">
+                    <td> {{ emp.uDept }}</td>
+                    <td> {{ emp.uFunction }}</td>
+                    <td> {{ emp.uPosition }}</td>
+                    <td> {{ emp.userID }}</td>
+                    <td> {{ emp.uVietnameseName }}</td>
+                    <td> {{ emp.uChineseName }}</td>
+                    <td> {{ emp.uEnglishName }}</td>
+                    <td> {{ emp.uLevel }}</td>
+                    <td> {{ emp.uBirthday }}</td>
+                    <td> {{ emp.uGender }}</td>
+                    <td> {{ emp.uAddress }}</td>
+                    <td> {{ emp.uUniversity }}</td>
+                    <td> {{ emp.uMajor }}</td>
+                    <td> {{ emp.uExperience }}</td>
+                    <td> {{ emp.uLastCompany }}</td>
+                    <td> {{ emp.uMail }}</td>
+                    <td> {{ emp.uPhone }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

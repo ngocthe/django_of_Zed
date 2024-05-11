@@ -1,0 +1,45 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    
+    <div class="m-1">
+        <a class="btn btn-primary m-1" href="{% url 'upload_file' %}">Upload File</a>
+        <br>
+        <table class="table table table-bordered border-primary">
+            <tr class="table-dark">
+                <th>File Name</th>
+                <th>Upload Time</th>
+                <th>Actions</th>
+            </tr>
+            {% for file in files %}
+                <tr class="table-info">
+                    <td>{{ file.filename }}</td>
+                    <td>{{ file.upload_time }}</td>
+                    <td>
+                        <a href="{% url 'download_file' file.id %}">Download</a>
+                        <a href="{% url 'delete_file' file.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <div class="pagination">
+        <span class="step-links">
+            {% if files.has_previous %}
+                <a class="btn btn-info" href="?page=1">&laquo; first</a>
+                <a class="btn btn-info" href="?page={{ files.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="btn btn-outline-primary current">
+                Page {{ files.number }} of {{ files.paginator.num_pages }}
+            </span>
+
+            {% if files.has_next %}
+                <a class="btn btn-info" href="?page={{ files.next_page_number }}">next</a>
+                <a class="btn btn-info" href="?page={{ files.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+        </div>
+    </div>
+{% endblock %}

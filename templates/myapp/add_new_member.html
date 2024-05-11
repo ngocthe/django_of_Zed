@@ -1,0 +1,130 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <br>
+    <div class="m-5">
+        <div class="row g-3 m-3 p-3">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="DeptId" placeholder="Dept">
+                    <label for="DeptId">Dept</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="FunctionId" placeholder="Function">
+                    <label for="FunctionId">Function</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="PositionId" placeholder="Position">
+                    <label for="PositionId">Position</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="userIDid" placeholder="userID">
+                    <label for="userIDid">userID</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="GenderId" aria-label="Floating label select example">
+                        <option selected>Nam</option>
+                        <option>Nu</option>
+                    </select>
+                    <label for="GenderId">Gender</label>
+                </div>
+            </div>
+        </div>
+        <div class="row g-3 m-3 p-3">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="VietnameseNameId" placeholder="VietnameseName">
+                    <label for="VietnameseNameId">VietnameseName</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="ChineseNameId" placeholder="ChineseName">
+                    <label for="ChineseNameId">ChineseName</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="EnglishNameId" placeholder="EnglishName">
+                    <label for="EnglishNameId">EnglishName</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="LevelId" placeholder="Level">
+                    <label for="LevelId">Level</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="BirthdayId" placeholder="Birthday">
+                    <label for="BirthdayId">Birthday</label>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row g-3 m-3 p-3">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="AddressId" placeholder="Address">
+                    <label for="AddressId">Address</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="UniversityId" placeholder="University">
+                    <label for="UniversityId">University</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="MajorId" placeholder="Major">
+                    <label for="MajorId">Major</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="ExperienceId" placeholder="Experience">
+                    <label for="ExperienceId">Experience</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="LastCompanyId" placeholder="LastCompany">
+                    <label for="LastCompanyId">LastCompany</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="row g-3 m-3 p-3">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="MailGrid" placeholder="name@example.com">
+                    <label for="MailGrid">Email address</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="PhoneId" placeholder="Phone">
+                    <label for="PhoneId">Phone</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary ">
+            <span class="spinner-border spinner-border-sm"></span>
+            Submit
+        </button>
+    </div>
+{% endblock %}

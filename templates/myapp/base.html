@@ -1,0 +1,42 @@
+<!-- Trong base.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{% include 'myapp/header.html' %}
+<body>
+    <div class="p-2 bg-dark text-white text-center">
+        <h1>
+            {% if request.user.is_authenticated %}
+                Hello, {{ user.username }}, Wellcome To SW Website!
+            {% else %}
+                You are not login!
+            {% endif %}
+        </h1>
+    </div>
+    
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/file_list">File Share</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sw_list">SW List</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-flex flex-row-reverse">
+                <li class="nav-item">
+                    <a class="nav-link " href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+{% include 'myapp/footer.html' %}
+</html>
